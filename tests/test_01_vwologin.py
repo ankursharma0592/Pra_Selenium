@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 
 def test_vwologin():
-    logger = logging.getLogger(__name__)
+    LOGGER = logging.getLogger(__name__)
     # chrome_options = webdriver.ChromeOptions()
     # chrome_options.add_argument("--start-maximized")
     driver = webdriver.Chrome()
@@ -22,6 +22,6 @@ def test_vwologin():
     button = driver.find_element(By.ID, "js-login-btn")
     button.click()
 
-    time.sleep(10)
-    logger.info("title is"+driver.title)
+    time.sleep(5)
+    LOGGER.info('title is ' + driver.title)
     assert "Dashboard" in driver.title
